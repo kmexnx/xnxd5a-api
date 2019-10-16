@@ -53,12 +53,22 @@ var AuthController = /** @class */ (function () {
     function AuthController() {
     }
     AuthController.prototype.me = function (req, res) {
+        var _this = this;
         var authorization = req.headers.authorization;
         if (!authorization)
             return res.send('incorrect token');
-        jwt.verify(authorization, conf.default.jwtSecret, function (err, verified) {
-            console.log(verified);
-        });
+        jwt.verify(authorization, conf.default.jwtSecret, function (err, verified) { return __awaiter(_this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, User.findOne({ where: { username: verified.username } })];
+                    case 1:
+                        response = _a.sent();
+                        res.status(200).send(response);
+                        return [2 /*return*/];
+                }
+            });
+        }); });
     };
     AuthController.prototype.login = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {

@@ -7,7 +7,8 @@
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev -r dotenv/config ./index.ts dotenv_config_path=./.env.dev --respawn --transpileOnly ./ ",
-    "prod": "tsc && node ./index.js"
+    "prod": "tsc && node ./index.js",
+    "migrate": "db-migrate up"
   },
   "author": "",
   "license": "ISC",
@@ -18,11 +19,10 @@
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.5.1",
-    "pg": "^7.11.0",
+    "pg": "^7.12.1",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^5.8.5",
-    "ts-node-dev": "^1.0.0-pre.39",
-    "typescript": "^3.4.5"
+    "sequelize": "^5.19.7",
+    "ts-node-dev": "^1.0.0-pre.39"
   },
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
@@ -31,6 +31,11 @@
     "@types/jsonwebtoken": "^8.3.2",
     "@types/node": "^12.0.0",
     "@types/sequelize": "^4.27.49",
-    "@types/validator": "^10.11.0"
+    "@types/validator": "^10.11.0",
+    "db-migrate": "^0.11.6",
+    "db-migrate-pg": "^1.0.0",
+    "install": "^0.13.0",
+    "npm": "^6.12.0",
+    "typescript": "^3.5.1"
   }
 }

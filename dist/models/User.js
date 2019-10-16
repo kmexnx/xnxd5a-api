@@ -16,6 +16,10 @@ var User = db_1.default.define('user', {
         unique: true
     },
     password: sequelize_1.DataTypes.STRING(500),
+    role: sequelize_1.DataTypes.STRING(200),
+    birthday: sequelize_1.DataTypes.DATE,
+    lastLogin: sequelize_1.DataTypes.DATE,
+    profilePicture: sequelize_1.DataTypes.STRING
 }, { modelName: 'user' });
 module.exports = User;
 /* ES6 WAY */
